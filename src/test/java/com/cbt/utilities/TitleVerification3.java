@@ -12,6 +12,9 @@ public class TitleVerification3 {
 
         List<String> urls = Arrays.asList("https://lulugandgeorgia.com",
                 "https://wayfair.com/", "https://walmart.com", "https://westelm.com/");
+//
+//        List<String> urls = Arrays.asList("https://google.com",
+//                "https://wayfair.com/", "https://walmart.com", "https://amazon.com/");
 
 
 

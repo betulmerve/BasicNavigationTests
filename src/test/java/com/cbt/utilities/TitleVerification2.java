@@ -12,6 +12,9 @@ public class TitleVerification2 {
         List<String> urls = Arrays.asList("https://lulugandgeorgia.com",
                 "https://wayfair.com/", "https://walmart.com", "https://westelm.com/");
 
+//        List<String> urls = Arrays.asList("https://google.com",
+//                "https://wayfair.com/", "https://walmart.com", "https://amazon.com/");
+
         WebDriver driver= BrowserFactory.getDriver("chrome");
 
         for (String url:urls) {
