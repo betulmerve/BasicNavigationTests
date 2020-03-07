@@ -14,9 +14,11 @@ public class BrowserFactory {
     public static WebDriver getDriver(String browser) {
 
         if (System.getProperty("os.name").contains("Mac") && browser.equalsIgnoreCase("edge")) {
+            System.out.println("you can not use edge, you have mac:)");
             return null;
         }
         if (System.getProperty("os.name").contains("Windows") && browser.equalsIgnoreCase("safari")) {
+            System.out.println("you can not use safari, you have windows:)");
             return null;
         }
         if (browser.equalsIgnoreCase("chrome")) {
@@ -27,8 +29,12 @@ public class BrowserFactory {
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
         }
+
+        if (browser.equalsIgnoreCase("safari")) {
+           return new SafariDriver();
+        }
         else {
-            return new SafariDriver();
+            return null;
         }
     }
 }

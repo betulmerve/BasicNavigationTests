@@ -8,9 +8,10 @@ public class NavigationTests {
 
     public static void main(String[] args) {
 
-
         chromeTest();
         //firefoxTest();
+        //safariTest();
+        //edgeTest();
     }
 
     public static void chromeTest() {
@@ -22,22 +23,8 @@ public class NavigationTests {
         driver.navigate().back();
 
         StringUtility.verifyEquals(driver.getTitle(),title1);
-
-//        if (driver.getTitle().equals(title1)) {
-//            System.out.println("PASSED");
-//        } else {
-//            System.out.println("FAILED");
-//        }
         driver.navigate().forward();
-
         StringUtility.verifyEquals(driver.getTitle(),title2);
-
-//        if (driver.getTitle().equals(title2)) {
-//            System.out.println("PASSED");
-//        } else {
-//            System.out.println("FAILED");
-//        }
-
         driver.quit();
     }
 
@@ -49,19 +36,38 @@ public class NavigationTests {
         driver.get("https://etsy.com");
         String title2=driver.getTitle();
         driver.navigate().back();
-
-        if (driver.getTitle().equals(title1)) {
-            System.out.println("PASSED");
-        } else {
-            System.out.println("FAILED");
-        }
+        StringUtility.verifyEquals(driver.getTitle(),title1);
         driver.navigate().forward();
-        if (driver.getTitle().equals(title2)) {
-            System.out.println("PASSED");
-        } else {
-            System.out.println("FAILED");
-        }
+        StringUtility.verifyEquals(driver.getTitle(),title2);
 
+        driver.quit();
+    }
+
+    public static void safariTest() {
+        WebDriver driver= BrowserFactory.getDriver("safari");
+        driver.get("https://google.com");
+        String title1=driver.getTitle();
+        driver.get("https://etsy.com");
+        String title2=driver.getTitle();
+        driver.navigate().back();
+
+        StringUtility.verifyEquals(driver.getTitle(),title1);
+        driver.navigate().forward();
+        StringUtility.verifyEquals(driver.getTitle(),title2);
+        driver.quit();
+    }
+
+    public static void edgeTest() {
+        WebDriver driver= BrowserFactory.getDriver("edge");
+        driver.get("https://google.com");
+        String title1=driver.getTitle();
+        driver.get("https://etsy.com");
+        String title2=driver.getTitle();
+        driver.navigate().back();
+
+        StringUtility.verifyEquals(driver.getTitle(),title1);
+        driver.navigate().forward();
+        StringUtility.verifyEquals(driver.getTitle(),title2);
         driver.quit();
     }
 
